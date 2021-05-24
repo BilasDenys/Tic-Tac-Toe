@@ -1,0 +1,57 @@
+<div class="app">
+  <header class="header">
+    <h1 class="header__title">Tic Tac Toe</h1>
+  </header>
+
+  <div class="container">
+    <main class="main">
+          <div class="winner__line" [ngClass]="{'one': winCombString === 'one','two': winCombString ==='two','three': winCombString === 'three','four': winCombString === 'four','five': winCombString === 'five','six': winCombString === 'six','seven': winCombString === 'seven','eight': winCombString === 'eight' }">
+            <svg width="9" height="321" viewBox="0 0 9 321" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="4.5" y1="316.5" x2="4.5" y2="5.49844" stroke="#AF3D38" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="grid">
+            <svg width="354" height="358" viewBox="0 0 356 356" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="234.5" y1="354.5" x2="234.5" y2="1.5" stroke="#AE56C7" stroke-width="6" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+              <line x1="120.5" y1="354.5" x2="120.5" y2="1.5" stroke="#AE56C7" stroke-width="6" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+              <path d="M6 241H362" stroke="#AE56C7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1.99902 126.595H357.999" stroke="#AE56C7" stroke-width="6" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </div>
+      <div class="square">
+        <app-square *ngFor="let square of squares; let i = index"
+                    [valueProps]="square"
+                    (click)="makeMove(i)"
+        ></app-square>
+      </div>
+      <button (click)="newGame()">Start New Game</button>
+    </main>
+    <aside class="aside">
+      <app-player-score
+        [counterX]="counterX"
+        [counterO]="counterO"
+        [drawCounterProps]="drawCount"
+        [currentPlayerProps]="currentPlayer"
+      ></app-player-score>
+    </aside>
+  </div>
+
+  <div class="modal">
+    <app-modal (emitNewGame)="newGame()"
+               [modalWindowProps]="modalWindow"
+               [drawStatusProps]="drawStatus"
+               [winnerPlayerProps]="winnerPlayer"
+
+    ></app-modal>
+  </div>
+</div>
+
+<app-form *ngIf="formStatus"
+  [formsStatus]="formStatus"
+  (emitFormStatusProps)="formStatusHandler()"
+></app-form>
+
+

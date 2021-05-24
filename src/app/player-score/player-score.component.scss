@@ -1,0 +1,11 @@
+@import './src/styles';
+.score {
+  margin-left: 35px;
+
+  &__player, &__title, .player__tern {
+    color: $score_color;
+    padding-bottom: 35px;
+    font-size: 24px;
+    font-weight: 200;
+  }
+}

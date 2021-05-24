@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: "DejaVuSans";
+  src: local("DejaVuSans"), url(./assets/fonts/dejavu-sans/DejaVuSans.ttf) format("truetype");
+}
+
+$body_bg_color: #545f7d;
+$square_bg: #44425e;
+$line_color: #ae56c7;
+$element_color: #c4c4c4;
+$winner_color: #af3d38;
+$score_color: #ffffff;
+
+*, :before, :after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  max-width: 1440px;
+  background: $body_bg_color;
+  font-family: 'DejaVuSans', sans-serif;
+}
+

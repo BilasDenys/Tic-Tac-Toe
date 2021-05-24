@@ -1,0 +1,123 @@
+@import './src/styles';
+
+.app {
+  min-height: 100vh;
+}
+.header {
+  min-width: 100%;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+  color: $score_color;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+.container {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+
+  .aside {
+    min-width: 300px;
+    justify-items: start;
+  }
+
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .grid {
+    position: absolute;
+    left: 394px;
+    bottom: 193px;
+    pointer-events: none;
+  }
+  .square {
+    display: grid;
+    grid-template-columns: 115px 115px 115px;
+  }
+}
+
+button {
+  justify-self: start;
+  align-self: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding: .75rem 1rem;
+  background-color: $body_bg_color;
+  color: $score_color;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+
+  &:hover {
+    color: $element_color;
+    background-color: $square_bg;
+  }
+}
+
+.winner__line {
+  position: absolute;
+  opacity: 0;
+}
+
+
+.one {
+  position: absolute;
+  top: 38px;
+  left: 565px;
+  transform: rotate(90deg);
+  opacity: 1;
+}
+.two {
+  position: absolute;
+  top: 153px;
+  left: 565px;
+  transform: rotate(90deg);
+  opacity: 1;
+}
+.three {
+  position: absolute;
+  top: 265px;
+  left: 565px;
+  transform: rotate(90deg);
+  opacity: 1;
+}
+.four {
+  position: absolute;
+  top: 153px;
+  left: 452px;
+  opacity: 1;
+}
+.five {
+  position: absolute;
+  top: 153px;
+  left: 565px;
+  opacity: 1;
+}
+.six {
+  position: absolute;
+  top: 153px;
+  left: 680px;
+  opacity: 1;
+}
+.seven {
+  position: absolute;
+  top: 150px;
+  left: 565px;
+  transform: rotate(-45deg);
+  opacity: 1;
+}
+.eight {
+  position: absolute;
+  top: 150px;
+  left: 565px;
+  transform: rotate(45deg);
+  opacity: 1;
+}
+

@@ -1,0 +1,30 @@
+<div class="score">
+  <h2 class="score__title">Score: </h2>
+
+  <div class="score__player" >
+   <span *ngIf="firstPlayer| async; else controlOne"> {{firstPlayer| async}}</span>: {{counterX}}
+    <ng-template #controlOne>
+      Player 1 (X)
+    </ng-template>
+  </div>
+  <div class="score__player" >
+    <span *ngIf="secondPlayer| async; else controlTwo"> {{secondPlayer| async}}</span>: {{counterO}}
+    <ng-template #controlTwo>
+      Player 2 (O)
+    </ng-template>
+  </div>
+  <div class="score__player">
+    Draw : {{drawCounterProps}}
+  </div>
+
+  <div class="player__tern">
+    <span *ngIf="currentPlayerProps === 'X'; else turnPlayer">
+      Turn: {{firstPlayer| async}} ({{currentPlayerProps}})
+    </span>
+    <ng-template #turnPlayer>
+      Turn: {{secondPlayer| async}} ({{currentPlayerProps}})
+    </ng-template>
+
+  </div>
+
+</div>

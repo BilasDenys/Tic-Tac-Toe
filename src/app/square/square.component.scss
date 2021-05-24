@@ -1,0 +1,30 @@
+@import './src/styles';
+
+:host {
+  border: 1px solid #ffffff;
+  min-height: 115px;
+  background-color: $square_bg;
+  &:nth-child(1) {
+    border-radius: 5px 0 0 0;
+  }
+  &:nth-child(3) {
+    border-radius: 0 5px 0 0;
+  }
+  &:nth-child(7) {
+    border-radius:  0 0 0 5px;
+  }
+  &:last-child {
+    border-radius: 0 0 5px 0;
+  }
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  color: $element_color;
+}
+
+
+

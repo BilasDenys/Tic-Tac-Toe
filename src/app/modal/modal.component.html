@@ -1,0 +1,18 @@
+<div class="modal" [ngClass]="{'active': modalWindowProps}">
+  <div class="modal__content">
+    <div class="winner" *ngIf="winnerPlayerProps">
+      <p *ngIf="winnerPlayerProps === 'X'; else playerTwo">
+        Winner: {{firstNamePlayer | async}} ({{winnerPlayerProps}})
+      </p>
+      <ng-template #playerTwo>
+        Winner: {{secondNamePlayer | async}} ({{winnerPlayerProps}})
+      </ng-template>
+      <button (click)="newGame()">Start New Game</button>
+    </div>
+    <div  class="draw" *ngIf="drawStatusProps">
+      Not bad!It's draw my friends!Do you want play again?
+      <button (click)="newGame()">Start New Game</button>
+    </div>
+  </div>
+</div>
+

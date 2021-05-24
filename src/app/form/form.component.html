@@ -1,0 +1,19 @@
+<div class="modal" [ngClass]="{'active': formsStatus}">
+  <div class="content">
+    <div class="control">
+      <div class="section">
+        <label for="playerOne">
+          Player 1 (X):
+          <input id="playerOne"  type="text" [(ngModel)]="playerOneName" placeholder="Enter player name...">
+        </label>
+      </div>
+    </div>
+    <div class="control">
+      <label for="playerTwo">
+        Player 2 (O):
+        <input id="playerTwo" type="text" [(ngModel)]="playerTwoName" placeholder="Enter player name...">
+      </label>
+    </div>
+    <button (click)="SubmitHandler()">Accept</button>
+  </div>
+</div>
